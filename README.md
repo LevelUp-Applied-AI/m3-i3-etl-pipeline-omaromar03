@@ -43,3 +43,32 @@ python etl_pipeline.py
 This repository is provided for educational use only. See [LICENSE](LICENSE) for terms.
 
 You may clone and modify this repository for personal learning and practice, and reference code you wrote here in your professional portfolio. Redistribution outside this course is not permitted.
+# ETL Pipeline — Amman Digital Market
+
+## Overview
+This project implements a Python ETL pipeline for analyzing customer data from a fictional e-commerce platform (Amman Digital Market).
+
+The pipeline:
+- Extracts data from PostgreSQL
+- Transforms it into customer-level analytics
+- Validates data quality
+- Loads results into a new table and CSV file
+
+## Tech Stack
+- Python
+- Pandas
+- SQLAlchemy
+- PostgreSQL
+- Pytest
+
+## Setup
+
+### 1. Start PostgreSQL (Docker)
+```bash
+docker run -d --name postgres-m3-int \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=postgres \
+  -e POSTGRES_DB=amman_market \
+  -p 5432:5432 \
+  -v pgdata_m3_int:/var/lib/postgresql/data \
+  postgres:15-alpine
